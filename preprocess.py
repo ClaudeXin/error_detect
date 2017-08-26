@@ -58,7 +58,9 @@ converter_dict = {
 # load data from file
 def load_data(filename, converter=converter_dict):
     X = np.loadtxt(filename, delimiter=',', converters=converter)
-    return X
+    X = [:, : -1]
+    y = [:, -1]
+    return X, y
 
 
 def __test():
