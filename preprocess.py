@@ -57,15 +57,27 @@ converter_dict = {
 
 # load data from file
 def load_data(filename, converter=converter_dict):
-    X = np.loadtxt(filename, delimiter=',', converters=converter)
+
+    for index in range(24, 31):
+        converter[index] = lambda value: np.uint8(float(value) * 100)
+
+    for index in range(33, 41):
+        converter[index] = lambda value: np.uint8(float(value) * 100)
+
+    X = np.loadtxt(filename, delimiter=',', converters=converter, 
+            dtype=np.uint8)
     X = X[:, : -1]
     y = X[:, -1]
-    y.dtype = int
+
     return X, y
 
 
+def save_data(filename, X):
+    np.savetxt(filename, X, delimiter=',', newline='\n')
+
+
 def __test():
-    load_data('kddcup.data_10_percent')
+    load_data('kddcup.new_data')
     pass
 
 
