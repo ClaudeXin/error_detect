@@ -1,0 +1,14 @@
+import numpy as np
+from sklearn.decomposition import PCA
+
+
+def normalize(X):
+    # max_array = np.matrix([X.argmax(0)])
+    max_array = X.argmax(0)
+    return np.apply_along_axis(lambda x: x / (1 + max_array), 1, X)
+
+
+def PCA(X):
+    pca=PCA(n_components=12)
+    X_r = pca.fit_transform(X)
+    return X_r
