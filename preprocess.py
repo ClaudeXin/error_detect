@@ -60,6 +60,7 @@ def load_data(filename, converter=converter_dict):
     X = np.loadtxt(filename, delimiter=',', converters=converter)
     X = X[:, : -1]
     y = X[:, -1]
+    y.dtype = int
     return X, y
 
 
