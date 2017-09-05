@@ -26,8 +26,10 @@ print("Training done \n")
 
 # Score
 recall = model.score(X, y)
+
 num_of_valid = 0
-for index in range(len(y_test_predict)):
+y_test_predict = model.predict(X_test)
+for index in range(len(y_test)):
     if abs(y_test_predict[index] - y_test[index]) < 1:
         num_of_valid += 1
 
