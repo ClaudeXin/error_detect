@@ -5,9 +5,9 @@ import classification as clf
 
 # Load training data and test data
 print("Load training data ...")
-X, y = pre.load_data('kddcup.data_10_percent')
+X, y = pre.load_data('data/kddcup.data_10_percent')
 print("Training data shape (%d, %d)" % (X.shape[0], X.shape[1]))
-X_test, y_test = pre.load_data('corrected')
+X_test, y_test = pre.load_data('data/corrected')
 print("Training data shape (%d, %d)" % (X_test.shape[0], X_test.shape[1]))
 print("Load data done \n")
 
