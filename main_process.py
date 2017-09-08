@@ -1,6 +1,7 @@
 import preprocess as pre
 import normalize as nor
 import classification as clf
+from pickle import dump
 
 
 # Load training data and test data
@@ -22,7 +23,8 @@ print("Feature normaize done \n")
 print("Training")
 model = clf.train(X, y)
 print("Training done \n")
-
+with open("clf.obj", "wb") as pic:
+    dump(model, pic)
 
 # Score
 recall = model.score(X, y)
