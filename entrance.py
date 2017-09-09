@@ -9,8 +9,9 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello():
-#    return run_process()
-    return "You are my son !"
+    return run_process()
+    # return "You are my son !"
+    # return "1.000,0.84"
 
 
 def run_process():
