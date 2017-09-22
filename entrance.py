@@ -50,4 +50,4 @@ def run_process():
     return "%f,%f" % (recall, accuracy)
 
 
-app.run(host='192.168.1.2')
+app.run(host='192.168.43.254')
